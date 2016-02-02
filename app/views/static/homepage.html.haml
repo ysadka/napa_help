@@ -1,5 +1,5 @@
 Wineries
 
 - @wineries.each do |winery|
-	= winery.name
-	= winery.wine_club
+	%li= "#{winery.name}, #{winery.address}, #{winery.phone}"
+	=link_to("Edit #{winery.name}",edit_winery_path("#{winery.id}"), {target: '_blank'})

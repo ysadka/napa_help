@@ -17,7 +17,9 @@ ActiveRecord::Schema.define(version: 20160131232321) do
   enable_extension "plpgsql"
 
   create_table "wineries", force: :cascade do |t|
-    t.string   "name"
+    t.string   "name",       default: ""
+    t.string   "address",    default: ""
+    t.string   "phone",      default: ""
     t.boolean  "wine_club",  default: false
     t.datetime "created_at"
     t.datetime "updated_at"

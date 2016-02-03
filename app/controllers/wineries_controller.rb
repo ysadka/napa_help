@@ -7,10 +7,10 @@ class WineriesController < ApplicationController
 	def create
 		@winery = Winery.new(winery_params)
 		if @winery.save
-      flash[:success] = "Winery Added"
-      redirect_to root_path
-    else
-      render 'new'
+      	flash[:success] = "Winery Added"
+      	redirect_to root_path
+    	else
+      	render 'new'
 		end
 	end
 
@@ -41,6 +41,6 @@ class WineriesController < ApplicationController
 	private
 
 	def winery_params
-		params.require(:winery).permit(:name, :address, :phone)
+		params.require(:winery).permit(:name, :address, :phone, :wine_club)
 	end
 end

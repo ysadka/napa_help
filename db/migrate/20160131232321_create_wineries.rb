@@ -4,6 +4,7 @@ class CreateWineries < ActiveRecord::Migration
     	t.string :name, 	  default: '', required: true
     	t.string :address,	  default: '', required: true
     	t.string :phone, 	  default: '', required: true
+    	t.string :website,    default: '', required: true
     	t.boolean :wine_club, default: false
 
     	t.timestamps

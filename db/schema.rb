@@ -43,6 +43,7 @@ ActiveRecord::Schema.define(version: 20160203024704) do
     t.string   "name",       default: ""
     t.string   "address",    default: ""
     t.string   "phone",      default: ""
+    t.string   "website",    default: ""
     t.boolean  "wine_club",  default: false
     t.datetime "created_at"
     t.datetime "updated_at"

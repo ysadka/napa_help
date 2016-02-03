@@ -1,6 +1,6 @@
 require 'nokogiri'
 require 'open-uri'
-
+rails
 p 'Populating Wines'
 
 doc = Nokogiri::HTML(open('https://napavintners.com/wineries/all_wineries.asp'))

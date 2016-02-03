@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160202195914) do
+ActiveRecord::Schema.define(version: 20160203024704) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,6 +30,14 @@ ActiveRecord::Schema.define(version: 20160202195914) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "varietals_wineries", force: :cascade do |t|
+    t.integer "varietal_id"
+    t.integer "winery_id"
+  end
+
+  add_index "varietals_wineries", ["varietal_id"], name: "index_varietals_wineries_on_varietal_id", using: :btree
+  add_index "varietals_wineries", ["winery_id"], name: "index_varietals_wineries_on_winery_id", using: :btree
 
   create_table "wineries", force: :cascade do |t|
     t.string   "name",       default: ""

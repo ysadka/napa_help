@@ -31,6 +31,9 @@ end
 
 # p "Site: #{wine.children[1].children[3].children[13].attributes.first[1].value
 
+Winery.create(name: "Robert Sinskey Vineyards", address: '6320 Silverado Trail, Napa, CA 94558', phone: '707-944-9090', website: 'http://www.robertsinskey.com/')
+
+
 p 'Wines Populated :)'
 
 p 'Populating Varietals and Photos'
@@ -66,7 +69,7 @@ VARIETALS = [
 							['Tempranillo', 'red', 'deep-violet-circle.png'],
 
 							['Syrah', 'red', 'deep-purple-circle.png'],
-							['Cabernet Savignon', 'red', 'deep-purple-circle.png'],
+							['Cabernet Sauvignon', 'red', 'deep-purple-circle.png'],
 							['Malbec', 'red', 'deep-purple-circle.png'],
 							['Petite Syrah', 'red', 'deep-purple-circle.png'],
 							['Petite Verdot', 'red', 'deep-purple-circle.png'],
@@ -74,6 +77,7 @@ VARIETALS = [
 							['Sherry', 'red', 'tawny-circle.png'],
 							['Port', 'red', 'tawny-circle.png'],
 							['Madeira', 'red', 'tawny-circle.png']
+							['Late Harvest', 'white', 'deep-gold-circle.png']
 						]
 VARIETALS.each do |var|
 	Varietal.create(name: var[0], color: var[1], photo_url: "https://s3.amazonaws.com/blank-wines/#{var[2]}")

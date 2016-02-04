@@ -25,6 +25,10 @@ class WineriesController < ApplicationController
 	def update
 		@winery = Winery.find(params[:id])
 		if @winery.update_attributes(winery_params)
+			if params[:varietal_ids].present?
+				@winery.Varietals = Varietal.where(id: params[:varietal_ids])
+				@winery.save
+			end
 			redirect_to root_path
 		else
 			render 'edit'
@@ -41,6 +45,6 @@ class WineriesController < ApplicationController
 	private
 
 	def winery_params
-		params.require(:winery).permit(:name, :address, :phone, :website, :wine_club)
+		params.require(:winery).permit(:name, :address, :phone, :website, :wine_club, varietal_ids: [])
 	end
 end

@@ -26,9 +26,9 @@ doc.css('div.container div.row-fluid div.span5').each do |wine|
 	ensure
 		if site
 			website = site.sub(/[?](.*)/ , '')
-			Winery.create(name: name, address: address, city: '', state: 'ca', phone: phone, website: website)
+			Winery.create(name: name, address: address, city: '', state: 'CA', phone: phone, website: website)
 		else
-			Winery.create(name: name, address: address, city: '', state: 'ca', phone: phone)
+			Winery.create(name: name, address: address, city: '', state: 'CA', phone: phone)
 		end
 	end
 end

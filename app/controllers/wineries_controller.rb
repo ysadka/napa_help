@@ -1,4 +1,5 @@
 class WineriesController < ApplicationController
+	include StatesHelper
 
 	def new
 		@winery = Winery.new

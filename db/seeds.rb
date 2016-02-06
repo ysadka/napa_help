@@ -35,7 +35,7 @@ end
 
 # p "Site: #{wine.children[1].children[3].children[13].attributes.first[1].value
 
-Winery.create(name: "Robert Sinskey Vineyards", address: '6320 Silverado Trail', city: 'Napa', state: 'ca', phone: '707-944-9090', website: 'http://www.robertsinskey.com/')
+Winery.create(name: "Robert Sinskey Vineyards", address: '6320 Silverado Trail', city: 'Napa', state: 'CA', phone: '707-944-9090', website: 'http://www.robertsinskey.com/')
 
 
 p 'Wines Populated :)'

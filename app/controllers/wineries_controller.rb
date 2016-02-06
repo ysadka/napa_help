@@ -45,6 +45,6 @@ class WineriesController < ApplicationController
 	private
 
 	def winery_params
-		params.require(:winery).permit(:name, :address, :phone, :website, :wine_club, varietal_ids: [])
+		params.require(:winery).permit(:name, :address, :city, :state, :phone, :website, :wine_club, varietal_ids: [])
 	end
 end

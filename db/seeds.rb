@@ -24,14 +24,18 @@ doc.css('div.container div.row-fluid div.span5').each do |wine|
 		puts "Could not store #{wine.children[1].children[3].children[1].children[1].children.text}"
 		puts "Error: #{e}"
 	ensure
-		website = site.sub(/[?](.*)/ , '')
-		Winery.create(name: name, address: address, phone: phone, website: website)
+		if site
+			website = site.sub(/[?](.*)/ , '')
+			Winery.create(name: name, address: address, city: '', state: 'ca', phone: phone, website: website)
+		else
+			Winery.create(name: name, address: address, city: '', state: 'ca', phone: phone)
+		end
 	end
 end
 
 # p "Site: #{wine.children[1].children[3].children[13].attributes.first[1].value
 
-Winery.create(name: "Robert Sinskey Vineyards", address: '6320 Silverado Trail, Napa, CA 94558', phone: '707-944-9090', website: 'http://www.robertsinskey.com/')
+Winery.create(name: "Robert Sinskey Vineyards", address: '6320 Silverado Trail', city: 'Napa', state: 'ca', phone: '707-944-9090', website: 'http://www.robertsinskey.com/')
 
 
 p 'Wines Populated :)'
@@ -76,7 +80,7 @@ VARIETALS = [
 
 							['Sherry', 'red', 'tawny-circle.png'],
 							['Port', 'red', 'tawny-circle.png'],
-							['Madeira', 'red', 'tawny-circle.png']
+							['Madeira', 'red', 'tawny-circle.png'],
 							['Late Harvest', 'white', 'deep-gold-circle.png']
 						]
 VARIETALS.each do |var|

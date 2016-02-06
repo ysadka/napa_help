@@ -42,6 +42,8 @@ ActiveRecord::Schema.define(version: 20160203024704) do
   create_table "wineries", force: :cascade do |t|
     t.string   "name",       default: ""
     t.string   "address",    default: ""
+    t.string   "city",       default: ""
+    t.string   "state",      default: ""
     t.string   "phone",      default: ""
     t.string   "website",    default: ""
     t.boolean  "wine_club",  default: false

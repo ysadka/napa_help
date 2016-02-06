@@ -1,5 +1,22 @@
 = "#{@winery.name}"
 br
 = "#{@winery.address}"
+= "#{@winery.city}, #{@winery.state}"
 br
 = "#{@winery.phone}"
+br
+br
+' Known For <br>
+table
+	tr
+		-@winery.varietals.each do |var|
+			td align="center"
+				=image_tag("#{var.photo_url}", height: '32', width: '32', title: "#{var.name}")
+	tr
+		-@winery.varietals.each do |var|
+			td
+				=var.name
+
+br
+br
+br

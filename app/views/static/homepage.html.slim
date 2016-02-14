@@ -1,4 +1,4 @@
-table border=1
+table
 	tr
 		th Winery
 		th Address
@@ -8,9 +8,8 @@ table border=1
 	- @wineries.each do |winery|
 		tr
 			td= link_to("#{winery.name}",winery_path("#{winery.id}"))
-			td #{ winery.address} <br>
-				#{ winery.city}, #{ winery.state}
-
+			td #{winery.address}<br>
+				#{winery.city}, #{winery.state}
 			td
 				=winery.phone
 				br

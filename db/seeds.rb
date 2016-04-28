@@ -78,7 +78,7 @@ VARIETAL_MAPPING = {'Riesling' => 1,
 }
 
 VARIETALS.each do |var|
-	Varietal.create(name: var[0], classification: vaar[1] color: var[2], photo_url: "https://s3.amazonaws.com/blank-wines/#{var[3]}")
+	Varietal.create(name: var[0], classification: var[1], color: var[2], photo_url: "https://s3.amazonaws.com/blank-wines/#{var[3]}")
 end
 
 p 'Varietals done!'

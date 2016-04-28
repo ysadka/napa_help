@@ -9,7 +9,7 @@ br
 
 div.varietals style="width:100%"
 	- @varietals.each do |v|
-		div.varietal-selector class="#{v.color}-colored"
+		div.varietal-selector class="#{v.classification}-colored"
 			a href="#"
 				=image_tag("#{v.photo_url}", height: '32', width: '32', title: "#{v.name}")
 				br

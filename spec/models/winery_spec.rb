@@ -9,6 +9,11 @@ RSpec.describe Winery, :type => :model do
     it {expect(subject).to validate_presence_of(:state)}
     it {expect(subject).to validate_presence_of(:phone)}
     it {expect(subject).to validate_presence_of(:website)}
+
+    it {expect(subject).to validate_presence_of(:blog)}
+    it {expect(subject).to validate_presence_of(:email)}
+    it {expect(subject).to validate_presence_of(:facebook)}
+    it {expect(subject).to validate_presence_of(:twitter)}
   end
 
   describe "associations" do

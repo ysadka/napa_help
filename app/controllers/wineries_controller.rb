@@ -43,6 +43,11 @@ class WineriesController < ApplicationController
     redirect_to root_path
 	end
 
+	def homepage
+		@wineries = Winery.all
+		@varietals = Varietal.all
+	end
+
 	private
 
 	def winery_params

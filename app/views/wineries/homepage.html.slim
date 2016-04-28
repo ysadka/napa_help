@@ -1,0 +1,40 @@
+div#classification-selectors
+	button class="classification-selector" id="white-classification" White Wines
+	button class="classification-selector" id="rosé-classification" Rosé Wines
+	button class="classification-selector" id="red-classification" Red Wines
+	button class="classification-selector" id="dessert-classification" Ports/Dessert/Etc
+
+br
+br
+
+div.varietals style="width:100%"
+	- @varietals.each do |v|
+		div.varietal-selector class="#{v.color}-colored"
+			a href="#"
+				=image_tag("#{v.photo_url}", height: '32', width: '32', title: "#{v.name}")
+				br
+				=v.name
+
+br
+div style="clear: left;"
+br
+
+table
+	tr
+		th Winery
+		th Address
+		th Contact Information
+		th Leading Varietals
+
+	- @wineries.each do |winery|
+		tr
+			td= link_to("#{winery.name}",winery_path("#{winery.id}"))
+			td #{winery.address}<br>
+				#{winery.city}, #{winery.state}
+			td
+				=winery.phone
+				br
+				=link_to("#{winery.name} Website", "#{winery.website}")
+			td
+				- if current_user
+					=link_to("Edit #{winery.name}",edit_winery_path("#{winery.id}"))
